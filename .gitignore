@@ -1,0 +1,5 @@
+.DS_Store
+MANIFEST
+__pycache__/
+dist/
+build/
