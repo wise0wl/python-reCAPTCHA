@@ -8,6 +8,9 @@ disguise themselves as a human.
 way to interact with the [reCAPTCHA API](http://www.google.com/recaptcha).
 
 ## Installation
+    $ pip install python-reCAPTCHA
+
+**or**
 
     $ git clone https://github.com/rbika/python-reCAPTCHA.git
     $ cd python-reCAPTCHA

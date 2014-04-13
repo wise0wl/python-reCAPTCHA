@@ -20,7 +20,7 @@ _WIDGET_HTML = '''
 <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
 <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
 </noscript>
-''' # }}}
+'''  # }}}
 
 
 def generate_html(public_key, ssl=False):
