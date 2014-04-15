@@ -1,31 +1,42 @@
-# python-reCAPTCHA - 0.1.0
+==========================
+python-reCAPTCHA - 0.1.0
+==========================
 
 reCAPTCHA is a free CAPTCHA service that protects your site against spam,
 malicious registrations and other forms of attacks where computers try to
 disguise themselves as a human.
 
 **python-reCAPTCHA** is a Python **3.x** module, that provides an easy
-way to interact with the [reCAPTCHA API](http://www.google.com/recaptcha).
+way to interact with the `reCAPTCHA API <http://www.google.com/recaptcha>`_.
 
-## Installation
+Installation
+============
+::
+
     $ pip install python-reCAPTCHA
 
 **or**
+
+::
 
     $ git clone https://github.com/rbika/python-reCAPTCHA.git
     $ cd python-reCAPTCHA
     $ python setup.py install
     $ cd .. && rm -rf python-reCAPTCHA
 
-## Usage
-To use reCAPTCHA, you need to [sign up for API
-keys](http://www.google.com/recaptcha/whyrecaptcha) for your site.
+Usage
+=====
+To use reCAPTCHA, you need to `sign up for API keys
+<http://www.google.com/recaptcha/whyrecaptcha>`_ for your site.
 
 Once you've signed up for API keys, adding reCAPTCHA to your site consists of
 two steps.
 
-### 1. Displaying the reCAPTCHA Widget
-Generate the widget HTML by calling the `generate_html` function.
+1. Displaying the reCAPTCHA Widget
+----------------------------------
+Generate the widget HTML by calling the ``generate_html`` function.
+
+::
 
     >>> from recaptcha.captcha import generate_html
     >>>
@@ -38,14 +49,19 @@ Generate the widget HTML by calling the `generate_html` function.
 Place the generated HTML inside your form. If you are working with Django por
 example, your form will looks like this:
 
+::
+
     <form action="">
         {% autoscape on %}recaptcha_html{% endautoescape %}
         <input type="submit" value="Submit">
     </form>
 
-### 2. Verifying user's anwser
+2. Verifying user's anwser
+--------------------------
 After the user submit the anwser, you should get the required paramenters and
-call the `verify` function. Again, a Django's example.
+call the ``verify`` function. Again, a Django's example.
+
+::
 
     >>> from recaptcha.captcha import verify
     >>>
@@ -59,5 +75,6 @@ call the `verify` function. Again, a Django's example.
     >>> print(result)
     {'success': False, 'error': 'incorrect-captcha-sol'}
 
-## Documentation
+Documentation
+=============
 Documentation will be available soon.
