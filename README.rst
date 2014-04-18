@@ -12,6 +12,7 @@ way to interact with the `reCAPTCHA API <http://www.google.com/recaptcha>`_.
 This project is released under the terms of the `MIT license
 <http://en.wikipedia.org/wiki/MIT_License>`_.
 
+
 Installation
 ============
 ::
@@ -26,6 +27,7 @@ Installation
     $ cd python-reCAPTCHA
     $ python setup.py install
     $ cd .. && rm -rf python-reCAPTCHA
+
 
 Usage
 =====
@@ -78,6 +80,10 @@ call the ``verify`` function. Again, a Django's example.
     >>> print(result)
     {'success': True, 'error': ''}
 
+
 Documentation
 =============
-Documentation will be available soon.
+
+Documentation is available at http://rbika.github.io/python-reCAPTCHA/
+
+
