@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Functions &mdash; python-reCAPTCHA 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="python-reCAPTCHA 0.1.0 documentation" href="index.html" />
+    <link rel="prev" title="Quickstart" href="user/quickstart.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="user/quickstart.html" title="Quickstart"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">python-reCAPTCHA 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="functions">
+<span id="api"></span><h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="recaptcha.captcha.generate_html">
+<tt class="descclassname">recaptcha.captcha.</tt><tt class="descname">generate_html</tt><big>(</big><em>public_key</em>, <em>ssl=False</em><big>)</big><a class="headerlink" href="#recaptcha.captcha.generate_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the code snippet needed to display the reCAPTCHA widget.</p>
+<p><strong>Args</strong>: your reCAPTCHA&#8217;s public key and a boolean that defines if SSL
+should be used or not.</p>
+<p><strong>Returns</strong>: a HTML formatted string. It should be placed inside a web form
+to display the reCAPTCHA widget.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recaptcha.captcha.verify">
+<tt class="descclassname">recaptcha.captcha.</tt><tt class="descname">verify</tt><big>(</big><em>private_key</em>, <em>remote_ip</em>, <em>challenge</em>, <em>response</em>, <em>ssl=False</em><big>)</big><a class="headerlink" href="#recaptcha.captcha.verify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if the awnser entered by the user is correct.</p>
+<p><strong>Args</strong>: your reCAPTCHA&#8217;s private key, the IP address of the user who
+solved the CAPTCHA, the value of &#8220;recaptcha_challenge_field&#8221; sent via the
+form, the value of &#8220;recaptcha_response_field&#8221; sent via form and a boolean
+that defines if SSL should be used or not.</p>
+<p><strong>Returns</strong>: A dict containing the keys &#8220;success&#8221; and &#8220;error&#8221;. &#8220;success&#8221; is
+either True or False, and &#8220;error&#8221; contains a string with an error code. For
+example: <tt class="docutils literal"><span class="pre">{'success':</span> <span class="pre">False,</span> <span class="pre">'error':</span> <span class="pre">'invalid-site-private-key'}</span></tt></p>
+<p>If &#8220;success&#8221; is True the error key is an empty string.</p>
+<p><strong>Error Code Reference</strong>:</p>
+<ul class="simple">
+<li>invalid-site-private-key: Not able to verify the private key.</li>
+<li>invalid-request-cookie: The challenge parameter of the verify script was
+incorrect.</li>
+<li>incorrect-captcha-sol: The CAPTCHA solution was incorrect.</li>
+<li>captcha-timeout: The solution was received after the CAPTCHA timed out.</li>
+<li>recaptcha-not-reachable: Unable to contact the reCAPTCHA verify server.</li>
+</ul>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="user/quickstart.html"
+                        title="previous chapter">Quickstart</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="user/quickstart.html" title="Quickstart"
+             >previous</a> |</li>
+        <li><a href="index.html">python-reCAPTCHA 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Rafael Bicalho.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
