@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
 '''
-Python plugin for reCAPTCHA service.
+recaptcha.captcha
+-----------------
+
+Python interface for the reCAPTCHA service.
+
+:copyright: (c) 2014 Rafael Bicalho.
+:license: MIT, see LICENSE for more details.
 '''
 
 from urllib.error import URLError
@@ -26,9 +32,11 @@ _WIDGET_HTML = '''
 def generate_html(public_key, ssl=False):
     '''Generate the code snippet needed to display the reCAPTCHA widget.
 
-    Parameters:
-    - public_key: Your public key.
-    - ssl: True if SSL should be used, False otherwise.
+    **Args**: your reCAPTCHA's public key and a boolean that defines if SSL
+    should be used or not.
+
+    **Returns**: a HTML formatted string. It should be placed inside a web form
+    to display the reCAPTCHA widget.
     '''
 
     public_key = public_key.strip()
@@ -44,20 +52,19 @@ def generate_html(public_key, ssl=False):
 def verify(private_key, remote_ip, challenge, response, ssl=False):
     '''Verify if the awnser entered by the user is correct.
 
-    Parameters:
-   - private_key: Your private key.
-    - remote_ip: The IP address of the user who solved the CAPTCHA.
-    - challenge: The value of "recaptcha_challenge_field" sent via the form.
-    - response: The value of "recaptcha_response_field" sent via the form.
-    - ssl: True if SSL should be used, False otherwise.
+    **Args**: your reCAPTCHA's private key, the IP address of the user who
+    solved the CAPTCHA, the value of "recaptcha_challenge_field" sent via the
+    form, the value of "recaptcha_response_field" sent via form and a boolean
+    that defines if SSL should be used or not.
 
-    Return values:
-    This function returns a dictionary containing the following keys.
-    - success: True or False.
-    - error: An string with the error code if the "success" key is false or an
-      empty string otherwise.
+    **Returns**: A dict containing the keys "success" and "error". "success" is
+    either True or False, and "error" contains a string with an error code. For
+    example: ``{'success': False, 'error': 'invalid-site-private-key'}``
 
-    Error Code Reference:
+    If "success" is True the error key is an empty string.
+
+    **Error Code Reference**:
+
     - invalid-site-private-key: Not able to verify the private key.
     - invalid-request-cookie: The challenge parameter of the verify script was
       incorrect.

@@ -1,34 +1,8 @@
-==========================
-python-reCAPTCHA - 0.1.0
-==========================
+.. _quickstart:
 
-reCAPTCHA is a free CAPTCHA service that protects your site against spam,
-malicious registrations and other forms of attacks where computers try to
-disguise themselves as a human.
+Quickstart
+==========
 
-**python-reCAPTCHA** is a Python **3.x** module, that provides an easy
-way to interact with the `reCAPTCHA API <http://www.google.com/recaptcha>`_.
-
-This project is released under the terms of the `MIT license
-<http://en.wikipedia.org/wiki/MIT_License>`_.
-
-Installation
-============
-::
-
-    $ pip install python-reCAPTCHA
-
-**or**
-
-::
-
-    $ git clone https://github.com/rbika/python-reCAPTCHA.git
-    $ cd python-reCAPTCHA
-    $ python setup.py install
-    $ cd .. && rm -rf python-reCAPTCHA
-
-Usage
-=====
 To use reCAPTCHA, you need to `sign up for API keys
 <http://www.google.com/recaptcha/whyrecaptcha>`_ for your site.
 
@@ -37,6 +11,7 @@ two steps.
 
 1. Displaying the reCAPTCHA Widget
 ----------------------------------
+
 Generate the widget HTML by calling the ``generate_html`` function.
 
 ::
@@ -61,6 +36,7 @@ example, your form will looks like this:
 
 2. Verifying user's anwser
 --------------------------
+
 After the user submit the anwser, you should get the required paramenters and
 call the ``verify`` function. Again, a Django's example.
 
@@ -77,7 +53,3 @@ call the ``verify`` function. Again, a Django's example.
     >>>
     >>> print(result)
     {'success': True, 'error': ''}
-
-Documentation
-=============
-Documentation will be available soon.
